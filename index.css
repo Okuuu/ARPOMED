@@ -1,0 +1,17 @@
+h1 {
+    text-align: center;
+}
+
+#selectModeContainer {
+    text-align: end;
+}
+
+.switch {
+    display: inline-block;
+}
+
+img {
+    display: block !important;
+    margin: auto;
+    width: 30%;
+}
