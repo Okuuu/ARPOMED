@@ -3,20 +3,18 @@ const numberOfFiles = 2
 var content = new Vue({
   el: '#content',
   data: {
-    mode: true,
-    id: getId()
+    modeRandom: true,
   },
   computed: {
+    id() {
+      return this.modeRandom ? (1+Math.floor(Math.random() * numberOfFiles)) : new Date().getDate()
+    },
     url(){
-      return this.mode ? getUrl((1+Math.floor(Math.random() * numberOfFiles))) : getUrl(new Date().getDate())
-    } 
+      return getUrl(this.id)
+    }
   }
 })
 
 function getUrl(picNumber) {
-  return 'img/' + picNumber+ '.jpg'
-}
-
-function getId() {
-  return 'a'
+  return 'assets/img/' + picNumber+ '.jpg'
 }
