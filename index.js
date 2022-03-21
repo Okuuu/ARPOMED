@@ -4,14 +4,20 @@ var content = new Vue({
   el: '#content',
   data: {
     modeRandom: true,
+    id: 0,
   },
   computed: {
-    id() {
-      return this.modeRandom ? (1+Math.floor(Math.random() * numberOfFiles)) : new Date().getDate()
-    },
     url(){
       return getUrl(this.id)
-    }
+    },
+  },
+  methods: {
+    generateId() {
+      this.id = this.modeRandom ? (1+Math.floor(Math.random() * numberOfFiles)) : new Date().getDate()
+    },
+  },
+  mounted() {
+    this.generateId()
   }
 })
 

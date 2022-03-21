@@ -18,24 +18,49 @@
                 <div class="cell large-1">
                     <h1>A Random Picture Of Maecheneb Every Day 🐺</h1>
                 </div>
-                <div class="cell large-6" id="selectModeContainer">
+                <div class="grid-x grid-margin-x">
                     
-                    <span class="toggleLabel">
-                        Day to day
+                    <div class="cell large-6">
+                        <span v-if="modeRandom">
+                            <button class="button" v-on:click="generateId   ()">Give me another picture ! 🐺</button>
+                        </span>
+                    </div>
+                    <div class="cell large-6" id="selectModeContainer">
+                        
+                        <span class="toggleLabel">
+                            Day to day
                     </span>
                     <div class="switch small">
                         <input class="switch-input" id="smallSwitch" type="checkbox" name="exampleSwitch" v-model="modeRandom">
                         <label class="switch-paddle" for="smallSwitch">
-                          <span class="show-for-sr">Small Portions Only</span>
+                            <span class="show-for-sr">Small Portions Only</span>
                         </label>
-                      </div>
+                    </div>
                       <span class="toggleLabel">
                         Random
                     </span>
                 </div>
+            </div>
                 <div class="cell large-6">
+
                     <img v-bind:src="url">
-                    <span class="legend">Ceci est la photo n°{{id}} de Maecheneb</span>
+                    <span>
+                        <h2>
+                            How it works ?
+                        </h2>
+                        <p>
+                            <ul>
+                                <li>
+                                    In random mode you'll get a random picture of Maecheneb from the pool
+                                </li>
+                                <li>
+                                    In day to day mode you'll get the picture assignated to this day, for instance if you select day to day on
+                                    the 12th of the month you'll get the 12th picture
+                                </li>
+                            </ul>
+                        </p>
+                    </span>
+                    <span class="legend">This is picture n°{{id}} of Maecheneb</span>
                 </div>
             </div>
         <script src="index.js"></script>
