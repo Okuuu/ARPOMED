@@ -1,7 +1,10 @@
-const numberOfFiles = 2
+const numberOfFiles = 42 // todo: add auto-detection of number of files
 
 var content = new Vue({
   el: '#content',
+  mounted() {
+    this.generateId()
+  },
   data: {
     modeRandom: true,
     id: 0,
@@ -16,11 +19,13 @@ var content = new Vue({
       this.id = this.modeRandom ? (1+Math.floor(Math.random() * numberOfFiles)) : new Date().getDate()
     },
   },
-  mounted() {
-    this.generateId()
-  }
+  watch: {
+    modeRandom: function () {
+      this.generateId()
+    }
+  },
 })
 
 function getUrl(picNumber) {
-  return 'assets/img/' + picNumber+ '.jpg'
+  return 'assets/img/' + picNumber+ '.jpg' //todo: possibility handle any 
 }

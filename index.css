@@ -13,5 +13,5 @@ h1 {
 img {
     display: block !important;
     margin: auto;
-    width: 30%;
+    /* width: 30%; */
 }

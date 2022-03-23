@@ -22,7 +22,7 @@
                     
                     <div class="cell large-6">
                         <span v-if="modeRandom">
-                            <button class="button" v-on:click="generateId   ()">Give me another picture ! 🐺</button>
+                            <button class="button" v-on:click="generateId()">Give me another picture ! 🐺</button>
                         </span>
                     </div>
                     <div class="cell large-6" id="selectModeContainer">
@@ -32,9 +32,7 @@
                     </span>
                     <div class="switch small">
                         <input class="switch-input" id="smallSwitch" type="checkbox" name="exampleSwitch" v-model="modeRandom">
-                        <label class="switch-paddle" for="smallSwitch">
-                            <span class="show-for-sr">Small Portions Only</span>
-                        </label>
+                        <label class="switch-paddle" for="smallSwitch"></label>
                     </div>
                       <span class="toggleLabel">
                         Random
@@ -42,11 +40,11 @@
                 </div>
             </div>
                 <div class="cell large-6">
-
-                    <img v-bind:src="url">
+                    <span class="legend">This is picture n°{{id}} of Maecheneb</span>
+                    <a :href="url" target="_blank"><img v-bind:src="url"></a>
                     <span>
                         <h2>
-                            How it works ?
+                            How does it works ?
                         </h2>
                         <p>
                             <ul>
@@ -60,9 +58,10 @@
                             </ul>
                         </p>
                     </span>
-                    <span class="legend">This is picture n°{{id}} of Maecheneb</span>
                 </div>
             </div>
         <script src="index.js"></script>
     </body>
 </html>
+
+
