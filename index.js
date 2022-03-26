@@ -1,4 +1,4 @@
-const numberOfFiles = 42 // todo: add auto-detection of number of files
+const numberOfFiles = 39 // todo: add auto-detection of number of files
 
 var content = new Vue({
   el: '#content',
@@ -28,4 +28,4 @@ var content = new Vue({
 
 function getUrl(picNumber) {
   return 'assets/img/' + picNumber+ '.jpg' //todo: possibility handle any 
-}
+} 
